@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<!-- what is this page all about? -->
+			<title> A really simple blog written with Parse</title>
+			<!-- styling -->
+			<link rel="stylesheet" href="assets/sass/main.css">
+			<!-- scripts -->
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script src="http://www.parsecdn.com/js/parse-latest.js"></script>
+			<script src="assets/js/underscore.js"></script>
+			<script src="assets/js/main.js"></script>
+		</head>
+		<body>
+
+			<!-- this is the header to the blog, and also contains the form that gives access to the blog -->
+			<div class="access">
+				<div class="access__container cf">
+					<!-- opening introduction -->
+					<header class="masthead">
+						<img class="masthead__logo" src="assets/images/codethechange.svg">
+						<h1 class="masthead__title">A Really Simple Blog</h1>
+						<h4 class="masthead__description">Build a simple blog on the Facebook Parse Backend JavaScript platform</h4>
+					</header>
+
+				</div>
+
+				<div class="access__container cf" id="accessContainer">
+					<!-- signin signup form -->
+					<form class="access__form cf" id="actionForm">
+						<input type="text" class="action__input" placeholder="Username" id="usernameField">
+						<input type="password" class="action__input" placeholder="Password" id="passwordField">
+					</form>
+					<!-- signin button -->
+					<button class="access__button" id="signInBtn">Already have an account?</button>
+					<!-- signup button -->
+					<button class="access__button" id="signUpBtn">Not signed up yet?</button>
+
+				</div>
+			</div>
+
+			<!-- everything blog related (blogs, post blog form) -->
+			<div class="blog cf">
+				<!-- create blog post form -->
+				<form class="blog__form cf" id="blogForm">
+					<input type="text" class="action__input action__input--dark" placeholder="Title" id="blogTitle">
+					<input type="text" class="action__input action__input--dark" placeholder="Description" id="blogDescription">
+					<textarea class="action__textarea" placeholder="Content" id="blogContent"></textarea>
+					<input type="submit" class="action__input action__input--dark" value="Create Post" id="createPostBtn">
+				</form>
+				<!-- this is where the blog posts go -->
+				<div class="blog__content" id="blogContent"></div>
+				<!-- notifying message -->
+				<button class="access__button access__button--blue blog__warning" id="loadMorePostsBtn">Sign in or sign up above to view content</button>
+			</div>
+
+			<!-- logout button -->
+			<button class="access__button access__button--fixed" id="logOutBtn">Logout</button>
+
+			<!-- blog template -->
+			<script type="text/template" id="blogTemplate">
+				<article class="article">
+					<!-- title and description -->
+					<header class="article__masthead">
+						<h3 class="article__title"><%= post.get('title') %></h3>
+						<h6 class="article__description"><%= post.get('description') %></h6>
+					</header>
+					<!-- content -->
+					<div class="article__content cf">
+						<p class="article__text"><%= post.get('content') %></p>
+						<button class="access__button access__button--blue--small" id="likePost" data-id="<%= post.id %>">Like This Post</button>
+						<button class="access__button access__button--blue--small" id="deletePost" data-id="<%= post.id %>">Delete This Post</button>
+					</div>
+				</article>
+			</script>
+
+		</body>
+	</html>

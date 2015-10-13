@@ -1,0 +1,479 @@
+// BASE
+// ----
+
+@import "base/reset";
+
+// HELPERS
+// -------
+
+@import "helpers/clearfix";
+@import "helpers/boxmodel";
+
+// FONTS
+// -----
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,200,300,600,700);
+
+// MAIN
+// ----
+
+body {
+	font-size: 62.5%;
+	background: rgb(242,242,242);
+}
+
+
+	.blog {
+		max-width: 86em;
+		margin: 0 auto;
+		padding: 4em 0;
+	}
+
+
+		.blog__content {
+			display: block;
+		}
+
+
+		.blog__warning {
+			// font: 500 1.2em "Helvetica Neue";
+			// color: rgb(140,144,148);
+			// text-align: center;
+			// text-transform: uppercase;
+			// letter-spacing: 1px;
+		}
+
+
+	.article {
+		display: block;
+		margin-bottom: 8em;
+		border-radius: 4px;
+		overflow: hidden;
+		background: rgb(255,255,255);
+		box-shadow: 0 0 1px rgba(0,0,0,0.25);
+
+	}
+
+
+		.article__masthead {
+			background: #1ab4c3; /* Old browsers */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fa650f+0,e91c10+100 */
+background: #fa650f; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #fa650f 0%, #e91c10 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fa650f), color-stop(100%,#e91c10)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #fa650f 0%,#e91c10 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #fa650f 0%,#e91c10 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #fa650f 0%,#e91c10 100%); /* IE10+ */
+background: linear-gradient(135deg,  #fa650f 0%,#e91c10 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa650f', endColorstr='#e91c10',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+			padding: 2em;
+		}
+
+
+		.article__title {
+			font: 300 2.4em "Helvetica Neue";
+			color: rgb(255,255,255);
+			text-align: center;
+			margin-bottom: 0.25em;
+		}
+
+
+		.article__description {
+			font: 500 1em "Helvetica Neue";
+			text-align: center;
+			color: rgb(255,255,255);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+
+		.article__content {
+			padding: 2em;
+		}
+
+
+			.article__text {
+				font: 400 1.8em/1.2em "Helvetica Neue";
+				color: rgb(42,42,42);
+			}
+
+
+		.article__interact {
+			background: rgb(245,245,245);
+			border-top: 1px solid rgba(230,230,230,0.5);
+		}
+
+
+		.bloat {
+			height: 4em;
+		}
+
+
+		.article__color {
+			height: 2px;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fa650f+0,e91c10+100 */
+background: #fa650f; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #fa650f 0%, #e91c10 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fa650f), color-stop(100%,#e91c10)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #fa650f 0%,#e91c10 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #fa650f 0%,#e91c10 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #fa650f 0%,#e91c10 100%); /* IE10+ */
+background: linear-gradient(135deg,  #fa650f 0%,#e91c10 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa650f', endColorstr='#e91c10',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+		}
+
+
+	// MASTHEAD OPENING
+	// ----------------
+
+
+	.masthead {
+		margin-bottom: 2em;
+	}
+
+
+		.masthead__logo {
+			width: 8em;
+			margin-bottom: 2em;
+		}
+
+
+		.masthead__title {
+			font: 300 3.6em "Helvetica Neue", sans-serif; 
+			text-align: center;
+			color: rgb(255,255,255);
+			margin-bottom: 0.25em;
+		}
+
+
+		.masthead__description {
+			font: 500 1em "Helvetica Neue", sans-serif;
+			text-align: center;
+			color: rgba(255,255,255,0.5);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+
+	// ACCESS CONTAINER
+	// ----------------
+
+
+	.access {
+		padding: 6em 2em;
+		text-align: center;
+		// gradient background
+		background: #1ab4c3; // Old browsers
+		background: -moz-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%); // FF3.6+
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1ab4c3), color-stop(100%,#0778de)); // Chrome, Safari4+
+		background: -webkit-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); // Opera 11.10+
+		background: -ms-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); // IE10+
+		background: linear-gradient(135deg, #1ab4c3 0%,#0778de 100%); // W3C
+	}
+
+
+		.access__container {
+			margin: 0 auto;
+			max-width: 60em;
+		}
+
+
+		.access__button {
+			margin: 0;
+			padding: 0.75em;
+			border: 1px solid rgba(255,255,255,0.5);
+			border-radius: 4px;
+			font: 400 1.4em "Helvetica Neue", sans-serif;
+			outline: none;
+			width: 48%;
+			background: transparent;
+			color: rgb(255,255,255);
+			-webkit-transition: border 0.25s;
+
+			&:first-of-type {
+				float: left;
+			}
+
+			&:last-of-type {
+				float: right;
+			}
+
+			&:hover {
+				border: 1px solid rgba(255,255,255,1);
+				cursor: pointer;
+			}
+
+
+		}
+
+
+		.access__button--blue--small {
+			border-color: rgb(82,152,252);
+			color: rgb(82,152,252);
+			margin: 0 auto;
+			float: none;
+			display: block;
+			margin-top: 2em;
+
+			&:hover {
+				border-color: rgb(82,152,252);
+			}
+
+			&:first-of-type {
+				float: left;
+			}
+
+			&:last-of-type {
+				float: right;
+			}
+
+		}
+
+
+		.action__textarea {
+			padding: 0.75em;
+			border: 0;
+			border-bottom: 1px solid rgba(255,255,255,0.25);
+			font: 400 1.4em "Helvetica Neue";
+			color: rgb(82,152,252);
+			background: rgb(255,255,255);
+			outline: none;
+			background: transparent;
+			color: rgb(255,255,255);
+			display: block;
+			width: 100%;
+
+			color: rgb(82,152,252);
+			border-bottom: 1px solid rgba(82,152,252,0.25);
+
+			&::-webkit-input-placeholder {
+				color: rgba(82,152,252,0.5);
+			}
+
+		}
+
+
+		.access__button--blue {
+			border-color: rgb(82,152,252);
+			color: rgb(82,152,252);
+			margin: 0 auto;
+			float: none;
+			display: block;
+
+			&:hover {
+				border-color: rgb(82,152,252);
+			}
+
+			&:first-of-type {
+				float: none;
+			}
+
+			&:last-of-type {
+				float: none;
+			}
+
+		}
+
+
+		.access__button--fixed {
+			border-color: rgb(82,152,252);
+			background: rgb(82,152,252);
+			color: rgb(255,255,255);
+			margin: 0 auto;
+			float: none;
+			display: block;
+			width: 20em;
+			position: fixed;
+			bottom: 1em;
+			left: 1em;
+			display: none;
+
+			&:hover {
+				border-color: rgb(82,152,252);
+			}
+
+			&:first-of-type {
+				float: none;
+			}
+
+			&:last-of-type {
+				float: none;
+			}
+
+		}
+
+
+		.access__form {
+			margin-bottom: 1em;
+			border: 1px solid red;
+			float: left;
+			display: block;
+			width: 100%;
+			border: 1px solid rgba(255,255,255,1);
+			border-radius: 4px;
+			text-align: left;
+			overflow: hidden;
+		}
+
+		.blog__form {
+			margin-bottom: 4em;
+			border: 1px solid red;
+			display: block;
+			width: 100%;
+			border: 1px solid rgba(82,152,252,1);
+			border-radius: 4px;
+			text-align: left;
+			overflow: hidden;
+			display: none;
+		}
+
+
+			.action__input {
+				margin: 0;
+				padding: 0.75em;
+				border: 0;
+				border-bottom: 1px solid rgba(255,255,255,0.25);
+				font: 400 1.4em "Helvetica Neue";
+				color: rgb(82,152,252);
+				background: rgb(255,255,255);
+				outline: none;
+				background: transparent;
+				color: rgb(255,255,255);
+				display: block;
+				width: 100%;
+
+				&::-webkit-input-placeholder {
+					color: rgba(255,255,255,0.5);
+				}
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+			}
+
+
+			.action__input--dark {
+				color: rgb(82,152,252);
+				border-bottom: 1px solid rgba(82,152,252,0.25);
+
+				&::-webkit-input-placeholder {
+					color: rgba(82,152,252,0.5);
+				}
+			}
+
+
+			.action__submit {
+				margin: 0;
+				padding: 0.75em;
+				border: 0;
+				border: 0;
+				font: 400 1.4em "Helvetica Neue";
+				color: rgb(255,255,255);
+				background: transparent;
+				outline: none;
+				width: 30%;
+				float: left;
+				cursor: pointer;
+			}
+
+
+		.action__button--full {
+			width: 100%;
+			margin: 0;
+			margin-top: 1em;
+			font-size: 1.2em;
+			padding: 0.5em;
+		}
+
+
+	.blog__header {
+
+	}
+
+
+		.user__action {
+			background: rgb(82,152,252);
+		}
+
+
+			.user__signin {
+				max-width: 100em;
+				margin: 0 auto;
+				padding: 1em;
+			}
+
+
+				.user__signin__directive {
+					font: 300 1.6em/1.875em "Helvetica Neue";
+					padding: 0;
+					margin: 0;
+					color: rgb(255,255,255);
+					float: left;
+				}
+
+
+				.user__action__button {
+					display: inline-block;
+					float: right;
+					margin: 0;
+					padding: 0.75em 1em;
+					border: 1px solid rgb(82,152,252);
+					border-radius: 2px;
+					font: 500 1.2em "Roboto";
+					text-transform: uppercase;
+					color: rgb(82,152,252);
+					background: rgb(255,255,255);
+					outline: none;
+					margin-left: 1em;
+				}
+
+
+
+	.user {
+		display: block;
+		max-width: 30em;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -15em;
+		width: 30em;
+		background: rgb(82,152,252);
+		box-shadow: 0px 0px 1px rgba(0,0,0,0.25);
+		border-radius: 2px 2px 0 0;
+		padding: 1em;
+	}
+
+
+		.user__statistics {
+			display: inline-block;
+			width: 50%;
+			float: left;
+		}
+
+
+			.user__statistics__number {
+				font: 200 3.2em "Helvetica Neue";
+				color: rgb(255,255,255);
+				text-align: center;
+			}
+
+
+			.user__statistics__heading {
+				font: 500 1em "Helvetica Neue";
+				color: rgb(255,255,255);
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+
+		.user__id {
+			font: 300 2.4em "Helvetica Neue";
+			color: rgb(255,255,255);
+		}
+
+
