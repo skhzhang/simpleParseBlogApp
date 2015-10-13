@@ -1,0 +1,421 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,200,300,600,700);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after {
+  clear: both;
+  display: block; }
+
+.cf {
+  /* For IE 6/7 only. Include this rule to trigger hasLayout and contain floats. */
+  *zoom: 1; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 62.5%;
+  background: #f2f2f2; }
+
+.blog {
+  max-width: 86em;
+  margin: 0 auto;
+  padding: 4em 0; }
+
+.blog__content {
+  display: block; }
+
+.article {
+  display: block;
+  margin-bottom: 8em;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25); }
+
+.article__masthead {
+  background: #1ab4c3;
+  /* Old browsers */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fa650f+0,e91c10+100 */
+  background: #fa650f;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #fa650f), color-stop(100%, #e91c10));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* IE10+ */
+  background: linear-gradient(135deg, #fa650f 0%, #e91c10 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa650f', endColorstr='#e91c10',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  padding: 2em; }
+
+.article__title {
+  font: 300 2.4em "Helvetica Neue";
+  color: white;
+  text-align: center;
+  margin-bottom: 0.25em; }
+
+.article__description {
+  font: 500 1em "Helvetica Neue";
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+.article__content {
+  padding: 2em; }
+
+.article__text {
+  font: 400 1.8em/1.2em "Helvetica Neue";
+  color: #2a2a2a; }
+
+.article__interact {
+  background: whitesmoke;
+  border-top: 1px solid rgba(230, 230, 230, 0.5); }
+
+.bloat {
+  height: 4em; }
+
+.article__color {
+  height: 2px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fa650f+0,e91c10+100 */
+  background: #fa650f;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #fa650f), color-stop(100%, #e91c10));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #fa650f 0%, #e91c10 100%);
+  /* IE10+ */
+  background: linear-gradient(135deg, #fa650f 0%, #e91c10 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa650f', endColorstr='#e91c10',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+
+.masthead {
+  margin-bottom: 2em; }
+
+.masthead__logo {
+  width: 8em;
+  margin-bottom: 2em; }
+
+.masthead__title {
+  font: 300 3.6em "Helvetica Neue";
+  text-align: center;
+  color: white;
+  margin-bottom: 0.25em; }
+
+.masthead__description {
+  font: 500 1em "Helvetica Neue";
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+.action {
+  background: #5298fc;
+  padding: 6em 2em;
+  text-align: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1ab4c3+0,0778de+100 */
+  background: #1ab4c3;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #1ab4c3), color-stop(100%, #0778de));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
+  /* IE10+ */
+  background: linear-gradient(135deg, #1ab4c3 0%, #0778de 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1ab4c3', endColorstr='#0778de',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+
+.action__container {
+  margin: 0 auto;
+  max-width: 60em; }
+
+.action__directive {
+  font: 200 1.6em "Helvetica Neue";
+  color: white; }
+
+.action__button {
+  margin: 0;
+  padding: 0.75em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  font: 400 1.4em "Helvetica Neue";
+  color: #5298fc;
+  background: white;
+  outline: none;
+  width: 48%;
+  background: transparent;
+  color: white;
+  -webkit-transition: border 0.25s; }
+  .action__button:first-of-type {
+    float: left; }
+  .action__button:last-of-type {
+    float: right; }
+  .action__button:hover {
+    border: 1px solid white;
+    cursor: pointer; }
+
+.action__textarea {
+  padding: 0.75em;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font: 400 1.4em "Helvetica Neue";
+  color: #5298fc;
+  background: white;
+  outline: none;
+  background: transparent;
+  color: white;
+  display: block;
+  width: 100%;
+  color: #5298fc;
+  border-bottom: 1px solid rgba(82, 152, 252, 0.25); }
+  .action__textarea::-webkit-input-placeholder {
+    color: rgba(82, 152, 252, 0.5); }
+
+.action__button--active {
+  border: 1px solid white; }
+
+.action__button--disabled {
+  border: 1px solid white;
+  opacity: 0.25; }
+
+.action__button--blue {
+  border-color: #5298fc;
+  color: #5298fc;
+  margin: 0 auto;
+  float: none;
+  display: block; }
+  .action__button--blue:hover {
+    border-color: #5298fc; }
+  .action__button--blue:first-of-type {
+    float: none; }
+  .action__button--blue:last-of-type {
+    float: none; }
+
+.action__button--blue--small {
+  border-color: #5298fc;
+  color: #5298fc;
+  margin: 0 auto;
+  float: none;
+  display: block;
+  margin-top: 2em; }
+  .action__button--blue--small:hover {
+    border-color: #5298fc; }
+  .action__button--blue--small:first-of-type {
+    float: left; }
+  .action__button--blue--small:last-of-type {
+    float: right; }
+
+.action__button--fixed {
+  border-color: #5298fc;
+  background: #5298fc;
+  color: white;
+  margin: 0 auto;
+  float: none;
+  display: block;
+  width: 20em;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  display: none; }
+  .action__button--fixed:hover {
+    border-color: #5298fc; }
+  .action__button--fixed:first-of-type {
+    float: none; }
+  .action__button--fixed:last-of-type {
+    float: none; }
+
+.action__form {
+  margin-bottom: 1em;
+  border: 1px solid red;
+  float: left;
+  display: block;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 4px;
+  text-align: left;
+  overflow: hidden; }
+
+.blog__form {
+  margin-bottom: 4em;
+  border: 1px solid red;
+  display: block;
+  width: 100%;
+  border: 1px solid #5298fc;
+  border-radius: 4px;
+  text-align: left;
+  overflow: hidden;
+  display: none; }
+
+.action__input {
+  margin: 0;
+  padding: 0.75em;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font: 400 1.4em "Helvetica Neue";
+  color: #5298fc;
+  background: white;
+  outline: none;
+  background: transparent;
+  color: white;
+  display: block;
+  width: 100%; }
+  .action__input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5); }
+  .action__input:last-child {
+    border-bottom: 0; }
+
+.action__input--dark {
+  color: #5298fc;
+  border-bottom: 1px solid rgba(82, 152, 252, 0.25); }
+  .action__input--dark::-webkit-input-placeholder {
+    color: rgba(82, 152, 252, 0.5); }
+
+.action__submit {
+  margin: 0;
+  padding: 0.75em;
+  border: 0;
+  border: 0;
+  font: 400 1.4em "Helvetica Neue";
+  color: white;
+  background: transparent;
+  outline: none;
+  width: 30%;
+  float: left;
+  cursor: pointer; }
+
+.action__button--full {
+  width: 100%;
+  margin: 0;
+  margin-top: 1em;
+  font-size: 1.2em;
+  padding: 0.5em; }
+
+.user__action {
+  background: #5298fc; }
+
+.user__signin {
+  max-width: 100em;
+  margin: 0 auto;
+  padding: 1em; }
+
+.user__signin__directive {
+  font: 300 1.6em/1.875em "Helvetica Neue";
+  padding: 0;
+  margin: 0;
+  color: white;
+  float: left; }
+
+.user__action__button {
+  display: inline-block;
+  float: right;
+  margin: 0;
+  padding: 0.75em 1em;
+  border: 1px solid #5298fc;
+  border-radius: 2px;
+  font: 500 1.2em "Roboto";
+  text-transform: uppercase;
+  color: #5298fc;
+  background: white;
+  outline: none;
+  margin-left: 1em; }
+
+.user {
+  display: block;
+  max-width: 30em;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -15em;
+  width: 30em;
+  background: #5298fc;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 2px 2px 0 0;
+  padding: 1em; }
+
+.user__statistics {
+  display: inline-block;
+  width: 50%;
+  float: left; }
+
+.user__statistics__number {
+  font: 200 3.2em "Helvetica Neue";
+  color: white;
+  text-align: center; }
+
+.user__statistics__heading {
+  font: 500 1em "Helvetica Neue";
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.user__id {
+  font: 300 2.4em "Helvetica Neue";
+  color: white; }
