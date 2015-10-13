@@ -13,156 +13,65 @@
 		</head>
 		<body>
 
-			<!-- header - used for signing up/signing in/singing out -->
-			<!-- <header class="blog__header">
-				<div class="blog__user-form"></div>
-				<div class="user__action">
-					<div class="user__signin cf">
-						<p class="user__signin__directive">New to this blog? Sign up on the right!</p>
-						<button class="user__action__button">Log In</button>
-						<button class="user__action__button">Sign Up</button>
-					</div>
-					<div class="user__signout"></div>
-				</div>
-			</header> -->
-
-			<div class="action">
-
-				<div class="action__container cf">
-
+			<!-- this is the header to the blog, and also contains the form that gives access to the blog -->
+			<div class="access">
+				<div class="access__container cf">
+					<!-- opening introduction -->
 					<header class="masthead">
 						<img class="masthead__logo" src="assets/images/codethechange.svg">
 						<h1 class="masthead__title">A Really Simple Blog</h1>
-						<h4 class="masthead__description">build a simple blog on the Facebook Parse Backend JavaScript platform</h4>
+						<h4 class="masthead__description">Build a simple blog on the Facebook Parse Backend JavaScript platform</h4>
 					</header>
 
-				<div class="access">
+				</div>
 
-					<form class="action__form cf" id="actionForm">
+				<div class="access__container cf" id="accessContainer">
+					<!-- signin signup form -->
+					<form class="access__form cf" id="actionForm">
 						<input type="text" class="action__input" placeholder="Username" id="usernameField">
 						<input type="password" class="action__input" placeholder="Password" id="passwordField">
 					</form>
-
-
-					<button class="action__button" id="signInBtn">Already have an account?</button>
-					<button class="action__button" id="signUpBtn">Not signed up yet?</button>
-
-				</div>
-
-					
-
-					
+					<!-- signin button -->
+					<button class="access__button" id="signInBtn">Already have an account?</button>
+					<!-- signup button -->
+					<button class="access__button" id="signUpBtn">Not signed up yet?</button>
 
 				</div>
-
 			</div>
 
+			<!-- everything blog related (blogs, post blog form) -->
 			<div class="blog cf">
-
+				<!-- create blog post form -->
 				<form class="blog__form cf" id="blogForm">
 					<input type="text" class="action__input action__input--dark" placeholder="Title" id="blogTitle">
 					<input type="text" class="action__input action__input--dark" placeholder="Description" id="blogDescription">
 					<textarea class="action__textarea" placeholder="Content" id="blogContent"></textarea>
 					<input type="submit" class="action__input action__input--dark" value="Create Post" id="createPostBtn">
 				</form>
-
-				<div class="blog__content">
-
-					<!-- <article class="article">
-						<header class="article__masthead">
-							<h3 class="article__title">This Is The First Blog Post</h3>
-							<h6 class="article__description">build a simple blog on the Facebook Parse Backend JavaScript platform</h6>
-						</header>
-						<div class="article__content cf">
-							<p class="article__text">This is the first blog post I've ever written. It is going to be the best blog post ever, so don't tell me it's not or I will not be happy. Just give me the satisfaction to know that I can do whatever I want and whatever is good is bad and whatever is bad is good and this is a ramble and a half so don't mind me.</p>
-
-							<button class="action__button action__button--blue--small" id="likePost">Like This Post</button>
-							<button class="action__button action__button--blue--small" id="deletePost">Delete This Post</button>
-
-						</div>
-					</article> -->
-
-
-				</div>
-
-				<button class="action__button action__button--blue blog__warning" id="loadMorePostsBtn">Sign in or sign up above to view content</button>
-<!-- 
-				<article class="article">
-					<header class="article__masthead">
-						<h3 class="article__title">This Is The First Blog Post</h3>
-						<h6 class="article__description">build a simple blog on the Facebook Parse Backend JavaScript platform</h6>
-					</header>
-					<div class="article__content">
-						<p class="article__text">This is the first blog post I've ever written. It is going to be the best blog post ever, so don't tell me it's not or I will not be happy. Just give me the satisfaction to know that I can do whatever I want and whatever is good is bad and whatever is bad is good and this is a ramble and a half so don't mind me.</p>
-					</div>
-					<footer class="article__interact">
-						<div class="bloat"></div>
-					</footer>
-					
-				</article>
-
-				<article class="article">
-					<header class="article__masthead">
-						<h3 class="article__title">This Is The First Blog Post</h3>
-						<h6 class="article__description">build a simple blog on the Facebook Parse Backend JavaScript platform</h6>
-					</header>
-					<div class="article__content">
-						<p class="article__text">This is the first blog post I've ever written. It is going to be the best blog post ever, so don't tell me it's not or I will not be happy. Just give me the satisfaction to know that I can do whatever I want and whatever is good is bad and whatever is bad is good and this is a ramble and a half so don't mind me.</p>
-					</div>
-					<footer class="article__interact">
-						<div class="bloat"></div>
-						<div class="article__color"></div>
-					</footer>
-					
-				</article>
-
-				<article class="article">
-					<header class="article__masthead">
-						<h3 class="article__title">This Is The First Blog Post</h3>
-						<h6 class="article__description">build a simple blog on the Facebook Parse Backend JavaScript platform</h6>
-					</header>
-					<div class="article__content">
-						<p class="article__text">This is the first blog post I've ever written. It is going to be the best blog post ever, so don't tell me it's not or I will not be happy. Just give me the satisfaction to know that I can do whatever I want and whatever is good is bad and whatever is bad is good and this is a ramble and a half so don't mind me.</p>
-					</div>
-					<footer class="article__interact">
-						<div class="bloat"></div>
-						<div class="article__color"></div>
-					</footer>
-					
-				</article> -->
-
+				<!-- this is where the blog posts go -->
+				<div class="blog__content" id="blogContent"></div>
+				<!-- notifying message -->
+				<button class="access__button access__button--blue blog__warning" id="loadMorePostsBtn">Sign in or sign up above to view content</button>
 			</div>
 
-			<!-- <div class="user cf">
-				<p class="user__id">alihicks7</p>
-				<span class="user__statistics">
-					<p class="user__statistics__number">49</p>
-					<p class="user__statistics__heading">Likes</p>
-				</span>
-				<span class="user__statistics">
-					<p class="user__statistics__number">10</p>
-					<p class="user__statistics__heading">Comments</p>
-				</span>
-				<button class="action__button action__button--full">Sign Out of harrylewis</button>
-			</div> -->
+			<!-- logout button -->
+			<button class="access__button access__button--fixed" id="logOutBtn">Logout</button>
 
-
-			<button class="action__button action__button--fixed" id="logOutBtn">Logout</button>
-
+			<!-- blog template -->
 			<script type="text/template" id="blogTemplate">
-
 				<article class="article">
+					<!-- title and description -->
 					<header class="article__masthead">
 						<h3 class="article__title"><%= post.get('title') %></h3>
 						<h6 class="article__description"><%= post.get('description') %></h6>
 					</header>
+					<!-- content -->
 					<div class="article__content cf">
 						<p class="article__text"><%= post.get('content') %></p>
-						<button class="action__button action__button--blue--small" id="likePost" data-id="<%= post.id %>">Like This Post</button>
-						<button class="action__button action__button--blue--small" id="deletePost" data-id="<%= post.id %>">Delete This Post</button>
+						<button class="access__button access__button--blue--small" id="likePost" data-id="<%= post.id %>">Like This Post</button>
+						<button class="access__button access__button--blue--small" id="deletePost" data-id="<%= post.id %>">Delete This Post</button>
 					</div>
 				</article>
-
 			</script>
 
 		</body>

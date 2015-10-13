@@ -115,7 +115,7 @@ $(function() {
 					adjustUI(Parse.User.current());
 					// reset sign up button for later use
 					signInButton.text('Already have an account?');
-					// get posts by blog author
+					// get posts by blog author and default postSkip to 0
 					getPosts(postSearchLimit, postSkip = 0);
 				},
 				error: function(user, error) {
@@ -150,7 +150,7 @@ $(function() {
 					adjustUI(Parse.User.current());
 					// reset sign up button for later use
 					signUpButton.text('Not signed up yet?');
-					// get posts by blog author
+					// get posts by blog author and default postSkip to 0
 					getPosts(postSearchLimit, postSkip = 0);
 				},
 				error: function(user, error) {
@@ -182,7 +182,7 @@ $(function() {
 		// write access for author
 		ACL.setWriteAccess(Parse.User.current(), true);
 
-		// create new post object - watch out for post in the parameters and newPost here
+		// create new post object - watch out for post in the function parameters and newPost here
 		var newPost = new PostClass();
 
 		// set post properties with .set() notation
@@ -239,7 +239,7 @@ $(function() {
 						$('.blog__warning').text('There is no content yet');
 				// at least one post
 				} else {
-					// less than 5 posts
+					// less than 5 posts (less than postSearchLimit)
 					if (posts.length < postSearchLimit) {
 						// display the posts on the screen
 						for (var i = posts.length - 1; i >= 0; i--)
@@ -271,7 +271,7 @@ $(function() {
 		$('.blog__content').prepend(_.template($('#blogTemplate').html(), { post : post }));
 	}
 
-	// give likePost a postId to like the blog post and the el dom element to notify the user if the like was successful
+	// give likePost a postId to like the blog post, and a reference to the button that was pressed
 	function likePost(postId, likeButton) {
 		// notify the user that the like is in progress
 		likeButton.text('Liking ...');
@@ -300,7 +300,7 @@ $(function() {
 		}, {
 			success: function(like) {
 				// notify user of successful liking
-				likeButton.text('You like this post');
+				likeButton.text('You liked this post');
 			},
 			error: function(like, error) {
 				// display error code and message
@@ -308,11 +308,10 @@ $(function() {
 				// reset like button
 				likeButton.text('Like This Post');
 			}
-		}
-		);
+		});
 	}
 
-	// give deletePost a postId to delete the blog post, the originalPost dom element to remove it from the page, and a deleteButton to notify the user of the progress
+	// give deletePost a postId to delete the blog post, the originalPost dom element to remove it from the page, and a reference to the button that was pressed
 	function deletePost(postId, originalPost, deleteButton) {
 		// notify user of progress
 		deleteButton.text('Deleting post ...');
@@ -353,21 +352,31 @@ $(function() {
 	// modify UI elements based on where the user is logged in or not
 	function adjustUI(userIsSignedIn) {
 		if (userIsSignedIn) {
-			$('.access').slideUp(250);
+			// hide access form
+			$('#accessContainer').slideUp(250);
+			// now loading posts
 			$('.blog__warning').text('Loading Content ...');
+			// show the logout button
 			$('#logOutBtn')
 				.show()
 				.text('Logout of ' + Parse.User.current().get('username'));
-			if (Parse.User.current().get('postingAbility')) {
-					$('#blogForm').slideDown(250);
-				}
+			// display blog creation form if current user has access
+			if (Parse.User.current().get('postingAbility'))
+				$('#blogForm').slideDown(250);
 		} else {
-			$('#logOutBtn').hide();
+			// logout
 			Parse.User.logOut();
-			$('.access').slideDown(250);
+			// show access form
+			$('#accessContainer').slideDown(250);
+			// signup or signin to view the blog
 			$('.blog__warning').text('Sign in or sign up above to view content');
+			// hide the logout button
+			$('#logOutBtn').hide();
+			// hide the blog form
 			$('#blogForm').slideUp(250);
+			// remove blog content
 			$('.blog__content').html('');
+			// reset postSkip
 			postSkip = 0;
 		}
 	}

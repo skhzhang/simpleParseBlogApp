@@ -125,8 +125,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa650f', end
 		}
 
 
+	// MASTHEAD OPENING
+	// ----------------
+
+
 	.masthead {
-		//border: 1px solid red;
 		margin-bottom: 2em;
 	}
 
@@ -138,7 +141,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa650f', end
 
 
 		.masthead__title {
-			font: 300 3.6em "Helvetica Neue"; 
+			font: 300 3.6em "Helvetica Neue", sans-serif; 
 			text-align: center;
 			color: rgb(255,255,255);
 			margin-bottom: 0.25em;
@@ -146,7 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa650f', end
 
 
 		.masthead__description {
-			font: 500 1em "Helvetica Neue";
+			font: 500 1em "Helvetica Neue", sans-serif;
 			text-align: center;
 			color: rgba(255,255,255,0.5);
 			text-transform: uppercase;
@@ -154,42 +157,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa650f', end
 		}
 
 
-	.action {
-		background: rgb(82,152,252);
+	// ACCESS CONTAINER
+	// ----------------
+
+
+	.access {
 		padding: 6em 2em;
 		text-align: center;
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1ab4c3+0,0778de+100 */
-background: #1ab4c3; /* Old browsers */
-background: -moz-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1ab4c3), color-stop(100%,#0778de)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); /* IE10+ */
-background: linear-gradient(135deg, #1ab4c3 0%,#0778de 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab4c3', endColorstr='#0778de',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		// gradient background
+		background: #1ab4c3; // Old browsers
+		background: -moz-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%); // FF3.6+
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1ab4c3), color-stop(100%,#0778de)); // Chrome, Safari4+
+		background: -webkit-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); // Opera 11.10+
+		background: -ms-linear-gradient(-45deg, #1ab4c3 0%,#0778de 100%); // IE10+
+		background: linear-gradient(135deg, #1ab4c3 0%,#0778de 100%); // W3C
 	}
 
 
-		.action__container {
+		.access__container {
 			margin: 0 auto;
 			max-width: 60em;
 		}
 
 
-		.action__directive {
-			font: 200 1.6em "Helvetica Neue";
-			color: rgb(255,255,255);
-		}
-
-
-		.action__button {
+		.access__button {
 			margin: 0;
 			padding: 0.75em;
 			border: 1px solid rgba(255,255,255,0.5);
 			border-radius: 4px;
-			font: 400 1.4em "Helvetica Neue";
-			color: rgb(82,152,252);
-			background: rgb(255,255,255);
+			font: 400 1.4em "Helvetica Neue", sans-serif;
 			outline: none;
 			width: 48%;
 			background: transparent;
@@ -209,6 +206,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab4c3', end
 				cursor: pointer;
 			}
 
+
+		}
+
+
+		.access__button--blue--small {
+			border-color: rgb(82,152,252);
+			color: rgb(82,152,252);
+			margin: 0 auto;
+			float: none;
+			display: block;
+			margin-top: 2em;
+
+			&:hover {
+				border-color: rgb(82,152,252);
+			}
+
+			&:first-of-type {
+				float: left;
+			}
+
+			&:last-of-type {
+				float: right;
+			}
 
 		}
 
@@ -236,18 +256,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab4c3', end
 		}
 
 
-		.action__button--active {
-			border: 1px solid rgba(255,255,255,1);
-		}
-
-
-		.action__button--disabled {
-			border: 1px solid rgba(255,255,255,1);
-			opacity: 0.25;
-		}
-
-
-		.action__button--blue {
+		.access__button--blue {
 			border-color: rgb(82,152,252);
 			color: rgb(82,152,252);
 			margin: 0 auto;
@@ -269,30 +278,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab4c3', end
 		}
 
 
-		.action__button--blue--small {
-			border-color: rgb(82,152,252);
-			color: rgb(82,152,252);
-			margin: 0 auto;
-			float: none;
-			display: block;
-			margin-top: 2em;
-
-			&:hover {
-				border-color: rgb(82,152,252);
-			}
-
-			&:first-of-type {
-				float: left;
-			}
-
-			&:last-of-type {
-				float: right;
-			}
-
-		}
-
-
-		.action__button--fixed {
+		.access__button--fixed {
 			border-color: rgb(82,152,252);
 			background: rgb(82,152,252);
 			color: rgb(255,255,255);
@@ -320,7 +306,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab4c3', end
 		}
 
 
-		.action__form {
+		.access__form {
 			margin-bottom: 1em;
 			border: 1px solid red;
 			float: left;

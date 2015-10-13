@@ -158,68 +158,65 @@ body {
   margin-bottom: 2em; }
 
 .masthead__title {
-  font: 300 3.6em "Helvetica Neue";
+  font: 300 3.6em "Helvetica Neue", sans-serif;
   text-align: center;
   color: white;
   margin-bottom: 0.25em; }
 
 .masthead__description {
-  font: 500 1em "Helvetica Neue";
+  font: 500 1em "Helvetica Neue", sans-serif;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 2px; }
 
-.action {
-  background: #5298fc;
+.access {
   padding: 6em 2em;
   text-align: center;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1ab4c3+0,0778de+100 */
   background: #1ab4c3;
-  /* Old browsers */
   background: -moz-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
-  /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #1ab4c3), color-stop(100%, #0778de));
-  /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
-  /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
-  /* Opera 11.10+ */
   background: -ms-linear-gradient(-45deg, #1ab4c3 0%, #0778de 100%);
-  /* IE10+ */
-  background: linear-gradient(135deg, #1ab4c3 0%, #0778de 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1ab4c3', endColorstr='#0778de',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */ }
+  background: linear-gradient(135deg, #1ab4c3 0%, #0778de 100%); }
 
-.action__container {
+.access__container {
   margin: 0 auto;
   max-width: 60em; }
 
-.action__directive {
-  font: 200 1.6em "Helvetica Neue";
-  color: white; }
-
-.action__button {
+.access__button {
   margin: 0;
   padding: 0.75em;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  font: 400 1.4em "Helvetica Neue";
-  color: #5298fc;
-  background: white;
+  font: 400 1.4em "Helvetica Neue", sans-serif;
   outline: none;
   width: 48%;
   background: transparent;
   color: white;
   -webkit-transition: border 0.25s; }
-  .action__button:first-of-type {
+  .access__button:first-of-type {
     float: left; }
-  .action__button:last-of-type {
+  .access__button:last-of-type {
     float: right; }
-  .action__button:hover {
+  .access__button:hover {
     border: 1px solid white;
     cursor: pointer; }
+
+.access__button--blue--small {
+  border-color: #5298fc;
+  color: #5298fc;
+  margin: 0 auto;
+  float: none;
+  display: block;
+  margin-top: 2em; }
+  .access__button--blue--small:hover {
+    border-color: #5298fc; }
+  .access__button--blue--small:first-of-type {
+    float: left; }
+  .access__button--blue--small:last-of-type {
+    float: right; }
 
 .action__textarea {
   padding: 0.75em;
@@ -238,41 +235,20 @@ body {
   .action__textarea::-webkit-input-placeholder {
     color: rgba(82, 152, 252, 0.5); }
 
-.action__button--active {
-  border: 1px solid white; }
-
-.action__button--disabled {
-  border: 1px solid white;
-  opacity: 0.25; }
-
-.action__button--blue {
+.access__button--blue {
   border-color: #5298fc;
   color: #5298fc;
   margin: 0 auto;
   float: none;
   display: block; }
-  .action__button--blue:hover {
+  .access__button--blue:hover {
     border-color: #5298fc; }
-  .action__button--blue:first-of-type {
+  .access__button--blue:first-of-type {
     float: none; }
-  .action__button--blue:last-of-type {
+  .access__button--blue:last-of-type {
     float: none; }
 
-.action__button--blue--small {
-  border-color: #5298fc;
-  color: #5298fc;
-  margin: 0 auto;
-  float: none;
-  display: block;
-  margin-top: 2em; }
-  .action__button--blue--small:hover {
-    border-color: #5298fc; }
-  .action__button--blue--small:first-of-type {
-    float: left; }
-  .action__button--blue--small:last-of-type {
-    float: right; }
-
-.action__button--fixed {
+.access__button--fixed {
   border-color: #5298fc;
   background: #5298fc;
   color: white;
@@ -284,14 +260,14 @@ body {
   bottom: 1em;
   left: 1em;
   display: none; }
-  .action__button--fixed:hover {
+  .access__button--fixed:hover {
     border-color: #5298fc; }
-  .action__button--fixed:first-of-type {
+  .access__button--fixed:first-of-type {
     float: none; }
-  .action__button--fixed:last-of-type {
+  .access__button--fixed:last-of-type {
     float: none; }
 
-.action__form {
+.access__form {
   margin-bottom: 1em;
   border: 1px solid red;
   float: left;
