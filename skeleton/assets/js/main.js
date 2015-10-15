@@ -6,7 +6,7 @@ $(function() {
 
 	
 	// initialize Parse
-	Parse.initialize("j5f9Aw7ZZ4ISoPnF5PvumVj83Pf5YMdVpSTFPdrX", "M7FwDwNkM3v9IJvKvE9TYCCwRrMzL3QxrLjwBwJf");
+	Parse.initialize("F5pASeGSwSgqcwyS7XcIvBKtCCoHeVReSOUM9On0", "vC747fPIKcOZMmHpcp4AdKNP7edVobReiFoI1PO0");
 
 	// db custom classes
 	var PostClass = Parse.Object.extend('Post');
@@ -104,61 +104,60 @@ $(function() {
 	// give signIn a user object, which looks like { username : 'some-username' , password : '•••••••••••' }, and a reference to the button that was pressed
 	function signIn(user, signInButton) {
 		// notify the user of progress
-
+		signInButton.text('Signing in ...');
 		// verify parameters
-
+		if(user.username.length && user.password.length) {
 			// sign in the user
-
-
+			Parse.User.logIn(user.username, user.password, {
+				success: function(user) {
 					// modify the UI for a signed in user
-
+					adjustUI(Parse.User.current());
 					// reset sign up button for later use
-
+					signInButton.text('Already have an account?');
 					// get posts by blog author and default postSkip to 0
+					getPosts(postSearchLimit, postSkip = 0);
 
-
-
+				},
+				error: function(user, error) {
 					// display error code and message
-
+					console.log(error.code + ' ' + error.message);
 					// reset sign up button
-
-
-
+					signUpButton.text('Not signed up yet?');
+				}
+			});
+		}
 	}
 
 	// give signUp a user object, which looks like { username : 'some-username' , password : '•••••••••••' }, and a reference to the button that was pressed
 	function signUp(user, signUpButton) {
 		// notify user of progress
-
+		signUpButton.text('Signing up...');
 
 		// verify parameters
-
+		if (user.username.length && user.password.length) {
 			// create a new user object
-
+			var newUser = new Parse.User();
 
 			// use object literal notation to set the values for this user object
-
-			
-
-				// can this user publish blog posts?
-			
-
-
+			newUser.set('username', user.username);
+			newUser.set('password', user.password);
+			newUser.signUp(null, {
+				success: function(signedUpUser) {
 					// modify the UI for a signed in user
-			
+					adjustUI(Parse.User.current());
 					// reset sign up button for later use
-			
+					signUpButton.text('Not signed up yet?');
 					// get posts by blog author and default postSkip to 0
-			
-
-
+					getPosts(postSearchLimit, postSkip = 0);
+				},
+				error: function(user, error) {
 					// display error code and message
-			
+					console.log(error.code + ' ' + error.message);
 					// reset sign up button
-			
-
-
-
+					signUpButton.text('Not signed up yet?');
+				}
+			});
+		}
 	}
 
 
@@ -169,47 +168,48 @@ $(function() {
 	// give createPost a post object, which takes the form { title : 'Some Title' , description : 'Some Description' , content : 'Some Content' }, generated from getPostInputs
 	function createPost(post, createButton) {
 		// notify user of progress
-
+		createButton.text('Creating post...');
 
 		// create permissions for post
-		
+		var ACL = new Parse.ACL();
 		// public read
-		
+		ACL.setPublicReadAccess(true);
 		// public no write
-		
+		ACL.setPublicWriteAccess(false);
 		// write access for author
-		
+		ACL.setWriteAccess(Parse.User.current(), true);
 
 		// create new post object - watch out for post in the function parameters and newPost here
 		
 
 		// set post properties with .set() notation
-
+		var newPost = new PostClass();
 		// set author, title, description, content
-		
-
-
+		newPost.set('title', post.title);
+		newPost.set('description', post.description);
+		newPost.set('content', post.content);
 
 		// set permissions for post
-		
+		newPost.setACL(ACL);
 		// create new post
-		
-
+		newPost.save(null, {
+			success: function(newestPost) {
 				// show the blog post on the page
-		
+				displayPost(newestPost);
 				// there is now a post on the page
-		
+				
 				// increment the post skip
-		
+				
 				// notify user of successful post
-		
-
-
+				createButton.text('Post creation successful! Create another post?');
+			},
+			error: function(error) {
 				// display error code and message
-		
+				console.log(error.code + ' ' + error.message);
 				// reset create post button
-		
-
+				createButton.text('Create Post');
+			}
+		});
 
 	}
 
@@ -312,23 +312,26 @@ $(function() {
 	// give deletePost a postId to delete the blog post, the originalPost dom element to remove it from the page, and a reference to the button that was pressed
 	function deletePost(postId, originalPost, deleteButton) {
 		// notify user of progress
-
+		deleteButton.text('Deleting post...');
 
 		// create new post instance and sets its id to the current post that's being deleted
-
+		var deletedPost = new PostClass();
+		deletedPost.id = postId;
 
 		// destroy this post
-
-
+		deletedPost.destroy({
+			success: function(post) {
 				// remove it from the page
+				originalPost.remove();
 
-
-
+			},
+			error: function(error) {
 				// display error code and message
-
+				console.log(error.code + ' ' + error.message);
 				// reset delete button
-
-
+				deleteButton.text('Delete Post');
+			}
+		});
 
 	}
 
